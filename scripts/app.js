@@ -9,4 +9,4 @@ const handleRofl = (e) => {
 }
 
 roflBtn.addEventListener('mouseenter', handleRofl)
-roflBtn.addEventListener('click', () => alert('Molodec'))
+roflBtn.addEventListener('click', () => alert('Может быть картинка?'))
