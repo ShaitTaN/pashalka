@@ -22,6 +22,7 @@ body{
 /* HEADER */
 .menu{
 	border-bottom: 1px solid rgb(53, 53, 53);
+	transform-origin: 30%;
 }
 .menu__items{
 	display: flex;
