@@ -1,6 +1,7 @@
 const roflBtn = document.querySelector('.rfl-btn')
 const menuItms = document.querySelectorAll('.menu__item')
 const menu = document.querySelector('.menu')
+const secretInp = document.querySelector('.secret-inp')
 
 const handleRofl = (e) => {
 	const btn = e.target
@@ -15,13 +16,14 @@ roflBtn.addEventListener('click', () => alert('Может быть картин�
 
 const handleRotate = (e) => {
 	item = e.target
-	console.log(item.dataset.num)
+	secretInp.style.opacity = 0
 	switch(item.dataset.num){
 		case '1':
 			menu.style.transform = 'rotate(180deg)'
 			break;
 		case '2':
 			menu.style.transform = 'rotate(90deg)'
+			secretInp.style.opacity = 1
 			break;
 		case '3':
 			menu.style.transform = 'rotate(0deg)'

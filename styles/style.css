@@ -20,6 +20,19 @@ body{
 }
 
 /* HEADER */
+.secret-inp{
+	position: absolute;
+	left: 47%;
+	top: 5px;
+	width: 100px;
+	outline: none;
+	background: rgb(20, 20, 20);
+	border: 1px solid rgb(53, 53, 53);
+
+	transition: opacity .5s ease;
+	opacity: 0;
+}
+
 .menu{
 	border-bottom: 1px solid rgb(53, 53, 53);
 	transform-origin: 30%;
