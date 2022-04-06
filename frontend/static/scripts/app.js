@@ -37,14 +37,19 @@ const handleRotate = (e) => {
 menuItms.forEach(item => item.addEventListener('click', handleRotate))
 
 let activeSlideIndex = 0
+let deg = 1
 const handleDown = () => {
+	const slideImg = slides[activeSlideIndex].firstElementChild
 	if (activeSlideIndex === slides.length-1){
-		slides.forEach(slide => slide.style.marginTop = '0px')
+		slides.forEach(slide => (slide.style.marginTop = '0px'))
+		slideImg.style.transform = `rotate(${90*deg}deg)`
 		activeSlideIndex = 0
 		return
 	}
 	slides[activeSlideIndex].style.marginTop = '-300px'
+	slideImg.style.transform = `rotate(${90*deg}deg)`
 	activeSlideIndex++
+	deg++
 }
 
 sliderBtn.addEventListener('click', handleDown)
