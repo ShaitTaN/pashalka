@@ -1,0 +1,10 @@
+# venv
+/venv
+/main/__pycache__
+/pashalki/__pycache__
+/pashalki/migrations
+/__pycache__
+.idea
+
+# django.files
+db.sqlite3

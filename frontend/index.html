@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 
-	<link rel="stylesheet" href="./styles/style.css">
+	<link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
 
@@ -24,10 +25,17 @@
 	<main>
 		<div class="container">
 			<div class="content">
-				<div class="content__img">
-					<img src="./assets/img/pythongus.jpg" alt="">
-					<img src="./assets/img/golangus.jpg" alt="">
-					<button>down</button>
+				<div class="slider">
+					<div class="slide" data-slide="true">
+						<img src="{% static 'assets/img/pythongus.jpg' %}" alt="">
+					</div>
+					<div class="slide" data-slide="true">
+						<img src="{% static 'assets/img/golangus.jpg' %}" alt="">
+					</div>
+					<div class="slide">
+						<img src="{% static 'assets/img/amoguTss.jpg' %}" alt="">
+					</div>
+					<div class="slider-btn"><img src="{% static 'assets/icon/arrow-down.png' %}"></div>
 				</div>
 				<a href=#" class="rfl-btn">Ну давай нажми на меня</a>
 			</div>
@@ -36,6 +44,6 @@
 
 
 
-	<script defer src="./scripts/app.js"></script>
+	<script defer src="{% static 'scripts/app.js' %}"></script>
 </body>
 </html>

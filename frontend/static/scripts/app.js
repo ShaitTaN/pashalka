@@ -2,6 +2,9 @@ const roflBtn = document.querySelector('.rfl-btn')
 const menuItms = document.querySelectorAll('.menu__item')
 const menu = document.querySelector('.menu')
 const secretInp = document.querySelector('.secret-inp')
+const sliderBtn = document.querySelector('.slider-btn')
+const slides = document.querySelectorAll('.slide[data-slide="true"]')
+const slider = document.querySelector('.slider')
 
 const handleRofl = (e) => {
 	const btn = e.target
@@ -32,3 +35,16 @@ const handleRotate = (e) => {
 }
 
 menuItms.forEach(item => item.addEventListener('click', handleRotate))
+
+let activeSlideIndex = 0
+const handleDown = () => {
+	if (activeSlideIndex === slides.length-1){
+		slides.forEach(slide => slide.style.marginTop = '0px')
+		activeSlideIndex = 0
+		return
+	}
+	slides[activeSlideIndex].style.marginTop = '-300px'
+	activeSlideIndex++
+}
+
+sliderBtn.addEventListener('click', handleDown)
