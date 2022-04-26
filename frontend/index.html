@@ -11,7 +11,8 @@
 </head>
 <body>
 
-	<input type="text" class="secret-inp" placeholder="url">
+	<!-- <input type="text" class="secret-inp" placeholder="url"> -->
+	<button data-order='4' class="ben-btn">CALL <img src="{% static 'assets/icon/0call.png' %}"></button>
 	<header class="menu">
 		<div class="container">
 			<ul class="menu__items">
@@ -39,11 +40,13 @@
 				</div>
 				<a href=#" class="rfl-btn">Ну давай нажми на меня</a>
 			</div>
+			<input class="range" type="range" min="0" max="5" step="1" value="0">
 		</div>
 	</main>
 
 
 
 	<script defer src="{% static 'scripts/app.js' %}"></script>
+	<script defer src="{% static 'scripts/slider.js' %}"></script>
 </body>
 </html>
