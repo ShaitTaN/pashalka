@@ -139,6 +139,9 @@ main{
 	align-items: center;
 	justify-content: space-between;
 	background: rgb(0, 0, 0);
+	border: 3px solid rgb(123, 114, 101);
+	border-radius: 30px;
+	overflow: hidden;
 }
 .modal__content img {
 	width: 100%;

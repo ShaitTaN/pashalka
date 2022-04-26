@@ -19,7 +19,7 @@ const handleRofl = (e) => {
 roflBtn.addEventListener('mouseenter', handleRofl)
 roflBtn.addEventListener('click', () => alert('Может быть картинка?'))
 
-let btnOrder = null
+let btnOrder = 0
 const handleRange = (e) => {
 	const value = e.target.value
 	btnOrder = value

@@ -2,6 +2,7 @@
 /main/__pycache__
 /pashalki/__pycache__
 /__pycache__
+./venv
 .idea
 *.pyc
 

@@ -1,10 +1,10 @@
 const sliderBtn = document.querySelector('.slider-btn')
-const slides = document.querySelectorAll('.slide[data-slide="true"]')
 const slider = document.querySelector('.slider')
 
 let activeSlideIndex = 0
 let deg = 1
 const handleDown = () => {
+	const slides = document.querySelectorAll('.slide[data-slide="true"]')
 	const slideImg = slides[activeSlideIndex].firstElementChild
 	if (activeSlideIndex === slides.length-1){
 		slides.forEach(slide => (slide.style.marginTop = '0px'))
