@@ -9,11 +9,19 @@ const modal = document.querySelector('.modal')
 const modalBtns = document.querySelectorAll('.modal__buttons button')
 const modalImg = document.querySelector('.modal__content img')
 
+const phrases = ['Да пребудет с тобой Сила.','Используй силу, Люк!','Внимание управляет реальностью.','Переходи на тёмную сторону!']
+let currentPhrase = 0
 const handleRofl = (e) => {
 	const btn = e.target
 	btn.style.position = 'absolute'
 	btn.style.top = `${Math.random()*80}%`
 	btn.style.left = `${Math.random()*80}%`
+	if(currentPhrase == phrases.length-1){
+		btn.innerText = phrases[currentPhrase]
+		return
+	}
+	btn.innerText = phrases[currentPhrase]
+	currentPhrase++
 }
 
 roflBtn.addEventListener('mouseenter', handleRofl)
