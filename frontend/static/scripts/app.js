@@ -9,6 +9,21 @@ const modal = document.querySelector('.modal')
 const modalBtns = document.querySelectorAll('.modal__buttons button')
 const modalImg = document.querySelector('.modal__content img')
 
+
+const handleSword = (e) => {
+	const img = e.currentTarget.querySelector('img')
+	img.src = "static/assets/icon/red-sword.png"
+}
+
+const createLightSword = () => {
+	if(document.querySelector('.sword')) return
+	const sword = document.createElement('div')
+	sword.classList.add('sword')
+	sword.innerHTML = '<img src="static/assets/icon/blue-sword.png"/>'
+	document.body.append(sword)
+	sword.addEventListener('click', handleSword)
+}
+
 const phrases = ['Да пребудет с тобой Сила.','Используй силу, Люк!','Внимание управляет реальностью.','Переходи на тёмную сторону!']
 let currentPhrase = 0
 const handleRofl = (e) => {
@@ -18,6 +33,7 @@ const handleRofl = (e) => {
 	btn.style.left = `${Math.random()*80}%`
 	if(currentPhrase == phrases.length-1){
 		btn.innerText = phrases[currentPhrase]
+		createLightSword()
 		return
 	}
 	btn.innerText = phrases[currentPhrase]
