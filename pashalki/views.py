@@ -14,6 +14,13 @@ def test(request):
         template.render(context, request)
         )
     
+def slides(request):
+    template = loader.get_template('slides_img.html')
+    context = {}
+    return HttpResponse(
+        template.render(context, request)
+        )
+
 
 class PicturesSerializerView(RetrieveAPIView):
     permission_classes = [permissions.AllowAny]

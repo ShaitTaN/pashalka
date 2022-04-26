@@ -5,6 +5,9 @@ from django.views.static import serve
 
 urlpatterns = [
     path('', test),
+    path('slides/', slides, name='slides'),
+    
+    
     path('pictures/<pk>/', PicturesSerializerView.as_view()),
     re_path(r'^images/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
