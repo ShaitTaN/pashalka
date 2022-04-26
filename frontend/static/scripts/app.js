@@ -1,10 +1,13 @@
 const roflBtn = document.querySelector('.rfl-btn')
 const menuItms = document.querySelectorAll('.menu__item')
 const menu = document.querySelector('.menu')
-const secretInp = document.querySelector('.secret-inp')
+const secretInp = document.querySelector('.modal__secret-inp')
 const range = document.querySelector('.range')
 const benBtn = document.querySelector('.ben-btn')
 const benBtnImg = benBtn.querySelector('img')
+const modal = document.querySelector('.modal')
+const modalBtns = document.querySelectorAll('.modal__buttons button')
+const modalImg = document.querySelector('.modal__content img')
 
 const handleRofl = (e) => {
 	const btn = e.target
@@ -24,17 +27,30 @@ const handleRange = (e) => {
 	console.log(btnOrder)
 }
 
-const handleBenBtn = (e) => {
+const handleBenCall = (e) => {
 	const order = e.target.dataset.order
 
 	if(order == btnOrder){
-		console.log('Call ben')
+		modal.classList.add('modal--active')
 	}
+}
+
+const handleCloseModal = (e) => {
+	if(e.target == modal){
+		modal.classList.remove('modal--active')
+	}
+}
+
+const handleClickYes = () => {
+	secretInp.style.opacity = 1
+	modalImg.src = 'static/assets/img/ben_hoho.gif'
 }
 
 range.addEventListener('click', handleRange)
 range.addEventListener('mousemove', handleRange)
-benBtn.addEventListener('click', handleBenBtn)
+benBtn.addEventListener('click', handleBenCall)
+modalBtns[1].addEventListener('click', handleClickYes)
+modal.addEventListener('click', handleCloseModal)
 
 let counter = 0
 const handleRotate = () => {
