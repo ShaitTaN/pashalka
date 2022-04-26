@@ -17,21 +17,21 @@ const handleRofl = (e) => {
 roflBtn.addEventListener('mouseenter', handleRofl)
 roflBtn.addEventListener('click', () => alert('Может быть картинка?'))
 
-const handleRotate = (e) => {
-	item = e.target
-	secretInp.style.opacity = 0
-	switch(item.dataset.num){
-		case '1':
-			menu.style.transform = 'rotate(180deg)'
-			break;
-		case '2':
-			menu.style.transform = 'rotate(90deg)'
-			secretInp.style.opacity = 1
-			break;
-		case '3':
-			menu.style.transform = 'rotate(0deg)'
-			break;
+let counter = 0
+const handleRotate = () => {
+	const degs = [0,180,360]
+	const ranDeg = degs[Math.floor(Math.random()*degs.length)]
+
+	if(counter === 5){
+		menu.style.transform = `rotate(90deg)`
+		secretInp.style.opacity = 1
+		counter = 0
+		return
 	}
+
+	secretInp.style.opacity = 0
+	menu.style.transform = `rotate(${ranDeg}deg)`
+	counter++
 }
 
 menuItms.forEach(item => item.addEventListener('click', handleRotate))
