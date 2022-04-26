@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+
+<input type="text" class="secret-inp" placeholder="url">
+<header class="menu">
+  <div class="container">
+    <ul class="menu__items">
+      <li class="menu__item" data-num="1">Пункт 1</li>
+      <li class="menu__item" data-num="2">Пункт 2</li>
+      <li class="menu__item" data-num="3">Пункт 3</li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="content">
+      <div class="img-container">
+        <div class="img-owner">
+          <img src="{% static 'assets/img/pythongus.jpg' %}" alt="Свистни в ... там тоже дырка">
+          <img src="{% static 'assets/img/pythongus.jpg' %}" alt="Свистни в ... там тоже дырка">
+        </div>
+        <div class="img-owner">
+          <img src="{% static 'assets/img/pythongus.jpg' %}" alt="Свистни в ... там тоже дырка">
+        </div>
+      </div>
+      <a href=#" class="rfl-btn">Ну давай нажми на меня</a>
+    </div>
+  </div>
+</main>
+
+
+
+<script defer src="{% static 'scripts/app.js' %}"></script>
+</body>
+</html>
