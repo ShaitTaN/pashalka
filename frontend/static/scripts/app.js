@@ -42,8 +42,10 @@ const handleCloseModal = (e) => {
 }
 
 const handleClickYes = () => {
+	const dialog = modal.querySelector('h1')
 	secretInp.style.opacity = 1
 	modalImg.src = 'static/assets/img/ben_hoho.gif'
+	dialog.innerText = 'I KNOW AHAHA'
 }
 
 range.addEventListener('click', handleRange)
