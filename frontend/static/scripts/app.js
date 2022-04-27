@@ -10,18 +10,21 @@ const modalBtns = document.querySelectorAll('.modal__buttons button')
 const modalImg = document.querySelector('.modal__content img')
 
 
-const handleSword = (e) => {
-	const img = e.currentTarget.querySelector('img')
-	img.src = "static/assets/icon/red-sword.png"
-}
+// const handleSword = (e) => {
+// 	const img = e.currentTarget.querySelector('img')
+// 	img.src = "static/assets/icon/red-sword.png"
+// }
 
 const createLightSword = () => {
 	if(document.querySelector('.sword')) return
 	const sword = document.createElement('div')
-	sword.classList.add('sword', 'blue')
-	// sword.innerHTML = '<img src="static/assets/icon/blue-sword.png"/>'
+	sword.innerHTML = `
+	<input id="vader" class="chk" type="checkbox"/>
+		<label for="vader" class="vader-saber"> 
+				<div class="sword">
+		</label>`
 	document.body.append(sword)
-	sword.addEventListener('click', handleSword)
+	// sword.addEventListener('click', handleSword)
 	const classChangeWatcher = new MutationObserver((mutations, observer) => {
 		console.log(mutations[0].target.classList)
 		const classes = mutations[0].target.classList.value.split(' ')
