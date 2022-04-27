@@ -9,22 +9,15 @@ const modal = document.querySelector('.modal')
 const modalBtns = document.querySelectorAll('.modal__buttons button')
 const modalImg = document.querySelector('.modal__content img')
 
-
-// const handleSword = (e) => {
-// 	const img = e.currentTarget.querySelector('img')
-// 	img.src = "static/assets/icon/red-sword.png"
-// }
-
 const createLightSword = () => {
 	if(document.querySelector('.sword')) return
 	const sword = document.createElement('div')
 	sword.innerHTML = `
 	<input id="vader" class="chk" type="checkbox"/>
 		<label for="vader" class="vader-saber"> 
-				<div class="sword">
+				<div class="sword blue">
 		</label>`
 	document.body.append(sword)
-	// sword.addEventListener('click', handleSword)
 	const classChangeWatcher = new MutationObserver((mutations, observer) => {
 		console.log(mutations[0].target.classList)
 		const classes = mutations[0].target.classList.value.split(' ')
