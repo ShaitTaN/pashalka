@@ -22,6 +22,15 @@ const createLightSword = () => {
 	sword.innerHTML = '<img src="static/assets/icon/blue-sword.png"/>'
 	document.body.append(sword)
 	sword.addEventListener('click', handleSword)
+	const classChangeWatcher = new MutationObserver((mutations, observer) => {
+		console.log(mutations[0].target.classList)
+		const classes = mutations[0].target.classList.value.split(' ')
+		if (classes.includes('red')){
+			alert('Sword changed')
+		}
+		console.log(observer)
+	})
+	classChangeWatcher.observe(sword, {attributes: true})
 }
 
 const phrases = ['Да пребудет с тобой Сила.','Используй силу, Люк!','Внимание управляет реальностью.','Переходи на тёмную сторону!']
