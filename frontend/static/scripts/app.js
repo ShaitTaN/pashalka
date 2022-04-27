@@ -18,8 +18,8 @@ const handleSword = (e) => {
 const createLightSword = () => {
 	if(document.querySelector('.sword')) return
 	const sword = document.createElement('div')
-	sword.classList.add('sword')
-	sword.innerHTML = '<img src="static/assets/icon/blue-sword.png"/>'
+	sword.classList.add('sword', 'blue')
+	// sword.innerHTML = '<img src="static/assets/icon/blue-sword.png"/>'
 	document.body.append(sword)
 	sword.addEventListener('click', handleSword)
 	const classChangeWatcher = new MutationObserver((mutations, observer) => {
