@@ -21,7 +21,7 @@ const createLightSword = () => {
 	sword.innerHTML = `
 	<input id="vader" class="chk" type="checkbox"/>
 		<label for="vader" class="vader-saber"> 
-				<div class="sword">
+				<div class="sword blue">
 		</label>`
 	document.body.append(sword)
 	// sword.addEventListener('click', handleSword)
