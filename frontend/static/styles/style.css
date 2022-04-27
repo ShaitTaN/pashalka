@@ -209,13 +209,18 @@ main{
 .sword {
 	position: absolute;
 	left: 50px;
-	bottom: 100px;
+	bottom: 280px;
 	width: 6px;
-	height: 180px;
+	height: 00px;
 	background-color: white;
 	border-radius: 6px/10px;
 	box-shadow: 0px 0px 10px,
 				0px 0px 2px inset;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
   }
   
   .sword.red {
@@ -349,3 +354,64 @@ main{
 	  box-shadow: 0 0 9px blue; 
 	}
   }
+
+.vader-saber,
+.sword {
+  cursor: pointer;
+}
+
+.chk {
+  display: none;
+}
+
+.chk:checked + .vader-saber>.sword {
+	height: 180px;
+	bottom: 100px;
+	-webkit-animation: flicker 0.3s ease infinite;
+	-moz-animation: flicker 0.3s ease infinite;
+	animation: flicker 0.3s ease infinite;
+}
+
+@-webkit-keyframes flicker {
+
+    0% { opacity: 0.9; }
+  30% { opacity: 0.97; }
+  40% { opacity: 1; }
+  80% { opacity: 0.9; }
+  88% { opacity: 0.98; }
+  90% { opacity: 0.94; }
+  93% { opacity: 0.9; }
+  95% { opacity: 0.99; }  
+  96% { opacity: 0.93; }
+  98% { opacity: 1; }
+  99% { opacity: 0.93; }
+
+}@-moz-keyframes flicker {
+
+  0% { opacity: 0.9; }
+  30% { opacity: 0.97; }
+  40% { opacity: 1; }
+  80% { opacity: 0.9; }
+  88% { opacity: 0.98; }
+  90% { opacity: 0.94; }
+  93% { opacity: 0.9; }
+  95% { opacity: 0.99; }  
+  96% { opacity: 0.93; }
+  98% { opacity: 1; }
+  99% { opacity: 0.93; }
+
+}@keyframes flicker {
+
+  0% { opacity: 0.9; }
+  30% { opacity: 0.97; }
+  40% { opacity: 1; }
+  80% { opacity: 0.9; }
+  88% { opacity: 0.98; }
+  90% { opacity: 0.94; }
+  93% { opacity: 0.9; }
+  95% { opacity: 0.99; }  
+  96% { opacity: 0.93; }
+  98% { opacity: 1; }
+  99% { opacity: 0.93; }
+
+}
