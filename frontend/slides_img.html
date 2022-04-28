@@ -10,13 +10,131 @@
   <link rel="stylesheet" href="{% static 'styles/style.css' %}">
 </head>
 <body>
-<style>
-	h1{
-		text-align: center;
-	}
-</style>
- <h1>Чел, ты что самый умный?</h1>
 
-<script defer src="{% static 'scripts/app.js' %}"></script>
+	<style>
+		.iq h3 {
+			padding:0;
+			margin:20px 0 0 0;
+		}
+
+		.iq input {
+			position:relative;
+			pointer-events: none;
+		}
+
+		.iq button {
+			margin-top:15px;
+			border-radius:15px;
+			padding:15px;
+		}
+
+	</style>
+
+
+	<div class="iq">
+		<h2>Тест на IQ</h2>
+		<h3>Выберите лишнее слово</h3>
+		<div class="ans">
+			<input type="checkbox" id="q1" />
+			<label for="q1e">Иглу</label>
+		</div>
+		<div class="ans">
+			<input type="checkbox" id="q1e" />
+			<label for="q1e">Дом</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q1" />
+			<label for="q1e">Банан</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q1" />
+			<label for="q1e">Квартира</label>
+		</div>
+		
+		<h3>Выберите композиторов мирового класса</h3>
+		<div class="ans">
+			<input type="checkbox" id="q2" />
+			<label for="q2e">ЦОМТАР</label>
+		</div>
+		<div class="ans">
+			<input type="checkbox" id="q2"/>
+			<label for="q2e">ЕЛОТОЛ</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q2"/>
+			<label for="q2e">УСТРАШ</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q2e"/>
+			<label for="q2e">Моргенштерн</label>
+		</div>
+		
+		<h3>Выберите лишнее</h3>
+		<div class="ans">
+			<input type="checkbox" id="q3" />
+			<label for="q3e">Осел</label>
+		</div>
+		<div class="ans">
+			<input type="checkbox" id="q3"/>
+			<label for="q3e">Яблоко</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q3e"/>
+			<label for="q3e">Тыква</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q3"/>
+			<label for="q3e">Морковь</label>
+		</div>
+		
+		<h3>Чем не оборудованы болиды "формулы один"</h3>
+		<div class="ans">
+			<input type="checkbox" id="q3" />
+			<label for="q4e">Руль</label>
+		</div>
+		<div class="ans">
+			<input type="checkbox" id="q4"/>
+			<label for="q4e">Эхо-радар</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q4"/>
+			<label for="q4e">Антивирус</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q4e"/>
+			<label for="q4e">Крыло самолета</label>
+		</div>
+		
+		<h3> Если бы я сказал, что Земля имеет форму квадрата и что елка фиолетовая, я должен был бы сказать, что гамбургер?</h3>
+		<div class="ans">
+			<input type="checkbox" id="q5" />
+			<label for="q5e">Шаурма</label>
+		</div>
+		<div class="ans">
+			<input type="checkbox" id="q5"/>
+			<label for="q5e">Отдал мид</label>
+		</div>
+		<div class="ans">
+			<input type="checkbox" id="q5e"/>
+			<label for="q5e">Чебоксары</label>
+		</div>
+		 <div class="ans">
+			<input type="checkbox" id="q5"/>
+			<label for="q5e">Браго</label>
+		</div>
+		
+		<button onclick="checkIQ()">Узнать результат</button>
+	</div>
+	
+	<script>
+		function checkIQ() {
+  if (document.getElementById('q5e').checked && document.getElementById('q4e').checked && document.getElementById('q3e').checked && document.getElementById('q2e').checked && document.getElementById('q1e').checked)  {
+  alert("13. Ваш iq 13.")
+} else {
+  alert("12. Ваш iq 12.")
+}
+}
+	</script>
+
 </body>
 </html>

@@ -52,9 +52,6 @@ body{
 	transform-origin: 30%;
 	transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
 }
-.menu a{
-	display: none;
-}
 .menu__items{
 	display: flex;
 	justify-content: center;
