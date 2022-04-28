@@ -4,8 +4,9 @@ from django.conf import settings
 from django.views.static import serve
 
 urlpatterns = [
-    path('', test),
+    path('', home),
     path('slides/', slides, name='slides'),
+    path('serverresponse/', serverresponse, name='serverresponse'),
     
     
     path('pictures/<pk>/', PicturesSerializerView.as_view()),
