@@ -9,9 +9,9 @@ urlpatterns = [
     path('serverresponse/', serverresponse, name='serverresponse'),
     path('pechenie312377377111829310/', cookies, name='cookies'),
     
-    
     path('pictures/<pk>/', PicturesSerializerView.as_view()),
     re_path(r'^images/(?P<path>.*)$', serve, {
             'document_root': settings.MEDIA_ROOT,
         }),
 ]
+handler404 = "pashalki.views.view_404"

@@ -20,3 +20,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('pashalki.urls'))
 ]
+handler404 = "pashalki.views.view_404"
