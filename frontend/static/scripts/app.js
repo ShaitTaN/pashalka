@@ -101,7 +101,7 @@ let counter = 0
 const handleRotate = () => {
 	const degs = [0,180,360]
 	const ranDeg = degs[Math.floor(Math.random()*degs.length)]
-
+	
 	if(counter === 5){
 		menu.style.transform = `rotate(90deg)`
 		range.style.display = 'block'
@@ -133,3 +133,4 @@ const handleKeydown = (e) => {
 secretInp.addEventListener('keydown', handleKeydown)
 
 localStorage.setItem('SecretUrl', 'https://1drv.ms/t/s!Ak-qouplFmsmgnKxMNt-BsBjGGCN')
+document.cookie = 'krasava= ; expires = Thu, 01 Jan 1970 00:00:00 GMT'
