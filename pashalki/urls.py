@@ -7,7 +7,7 @@ urlpatterns = [
     path('', home),
     path('slides/', slides, name='slides'),
     path('serverresponse/', serverresponse, name='serverresponse'),
-    path('pechenie312377377111829310/', cookies, name='cookies'),
+    path('pechenie/', cookies, name='cookies'),
     
     path('pictures/<pk>/', PicturesSerializerView.as_view()),
     re_path(r'^images/(?P<path>.*)$', serve, {
