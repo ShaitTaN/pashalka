@@ -122,15 +122,11 @@ menuItms.forEach(item => item.addEventListener('click', handleRotate))
 
 const handleKeydown = (e) => {
 	if(e.key === 'Enter'){
-		try{
-			window.location.replace(secretInp.value)
-		}catch{
-			console.error('Кууудаааа мы лезем куууудааа')
-		}
+		window.location.replace(secretInp.value)
 	}
 }
 
 secretInp.addEventListener('keydown', handleKeydown)
 
-localStorage.setItem('SecretUrl', 'https://1drv.ms/t/s!Ak-qouplFmsmgnKxMNt-BsBjGGCN')
+localStorage.setItem('SecretUrl', 'https://1drv.ms/w/s!Ak-qouplFmsmgnOyIzwIWtV7vek3?e=UM5vka')
 document.cookie = 'krasava= ; expires = Thu, 01 Jan 1970 00:00:00 GMT'
