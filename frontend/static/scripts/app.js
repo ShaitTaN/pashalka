@@ -9,6 +9,8 @@ const modal = document.querySelector('.modal')
 const modalBtns = document.querySelectorAll('.modal__buttons button')
 const modalImg = document.querySelector('.modal__content img')
 
+let side
+
 const createLightSword = () => {
 	if(document.querySelector('.sword')) return
 	const sword = document.createElement('div')
@@ -22,11 +24,13 @@ const createLightSword = () => {
 		console.log(mutations[0].target.classList)
 		const classes = mutations[0].target.classList.value.split(' ')
 		if (classes.includes('red')){
-			alert('Sword changed')
+			alert('Правильный выбор!')
+			benBtn.removeEventListener('click', handleChoiceNotMade)
+			benBtn.addEventListener('click', handleBenCall)
 		}
 		console.log(observer)
 	})
-	classChangeWatcher.observe(sword, {attributes: true})
+	classChangeWatcher.observe(sword.querySelector('.sword'), {attributes: true})
 }
 
 const phrases = ['Да пребудет с тобой Сила.','Используй силу, Люк!','Внимание управляет реальностью.','Переходи на тёмную сторону!']
@@ -44,9 +48,16 @@ const handleRofl = (e) => {
 	btn.innerText = phrases[currentPhrase]
 	currentPhrase++
 }
-
+const handleRoflClick = (e) => {
+	e.preventDefault()
+	const btn = e.target
+	currentPhrase = 3
+	btn.innerText = phrases[currentPhrase]
+	alert('sword blue = sword (color)')
+	createLightSword()
+}
 roflBtn.addEventListener('mouseenter', handleRofl)
-roflBtn.addEventListener('click', () => alert('Может быть картинка?'))
+roflBtn.addEventListener('click', handleRoflClick)
 
 let btnOrder = 0
 const handleRange = (e) => {
@@ -56,12 +67,16 @@ const handleRange = (e) => {
 	console.log(btnOrder)
 }
 
-const handleBenCall = (e) => {
+function handleBenCall (e) {
 	const order = e.target.dataset.order
 
 	if(order == btnOrder){
 		modal.classList.add('modal--active')
 	}
+}
+
+function handleChoiceNotMade() {
+	alert('Ты еще не сделал выбор!')
 }
 
 const handleCloseModal = (e) => {
@@ -79,7 +94,7 @@ const handleClickYes = () => {
 
 range.addEventListener('click', handleRange)
 range.addEventListener('mousemove', handleRange)
-benBtn.addEventListener('click', handleBenCall)
+benBtn.addEventListener('click', handleChoiceNotMade)
 modalBtns[1].addEventListener('click', handleClickYes)
 modal.addEventListener('click', handleCloseModal)
 

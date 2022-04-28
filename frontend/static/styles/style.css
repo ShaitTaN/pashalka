@@ -139,6 +139,7 @@ main{
 .range{
 	opacity: 0;
 	display: none;
+	width: 1000%;
 }
 
 .modal{
