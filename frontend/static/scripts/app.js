@@ -20,14 +20,12 @@ const createLightSword = () => {
 		</label>`
 	document.body.append(sword)
 	const classChangeWatcher = new MutationObserver((mutations, observer) => {
-		console.log(mutations[0].target.classList)
 		const classes = mutations[0].target.classList.value.split(' ')
 		if (classes.includes('red')){
 			alert('Правильный выбор!')
 			benBtn.removeEventListener('click', handleChoiceNotMade)
 			benBtn.addEventListener('click', handleBenCall)
 		}
-		console.log(observer)
 	})
 	classChangeWatcher.observe(sword.querySelector('.sword'), {attributes: true})
 }
