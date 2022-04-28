@@ -8,4 +8,4 @@
 *.pyc
 
 # django.files
-db.sqlite3
+
