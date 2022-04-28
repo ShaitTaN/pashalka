@@ -207,8 +207,9 @@ main{
 /* SWORD */
 
 .sword {
+	transform: rotate(30deg);
 	position: absolute;
-	left: 50px;
+	left: 150px;
 	bottom: 280px;
 	width: 6px;
 	height: 00px;
@@ -235,12 +236,18 @@ main{
 	  animation: glow_blue 1.5s linear infinite;
   }
   .sword:before{
+	transform: rotate(-70deg);
 	content: "";
 	position: absolute;
 	left: -1px;
 	top: 175px;
 	width: 8px;
 	height: 12px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
 	background-image: linear-gradient(to right,
 									  transparent 1px,
 									  rgba(255, 255, 255, 0.4) 1px,
@@ -263,11 +270,17 @@ main{
   }
   
   .sword:after{
+	transform: rotate(-100deg);
 	position: absolute;
 	top: 187px;
 	left: -1px;
 	width: 8px;
 	height: 60px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
 	background-image:
 					  linear-gradient(to right,
 									  rgba(255, 255, 255, 0) 0px,
@@ -364,13 +377,51 @@ main{
   display: none;
 }
 
-.chk:checked + .vader-saber>.sword {
+.chk:checked + .vader-saber>.sword,
+.chk:checked + .vader-saber>.sword.blue,
+.chk:checked + .vader-saber>.sword.red,
+.chk:checked + .vader-saber>.sword.sword.purple {
 	height: 180px;
 	bottom: 100px;
-	-webkit-animation: flicker 0.3s ease infinite;
-	-moz-animation: flicker 0.3s ease infinite;
-	animation: flicker 0.3s ease infinite;
 }
+
+.chk:checked + .vader-saber>.sword::after,
+.chk:checked + .vader-saber>.sword.blue::after,
+.chk:checked + .vader-saber>.sword.red::after,
+.chk:checked + .vader-saber>.sword.purple::after{
+	transform: rotate(0);
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.chk:checked + .vader-saber>.sword::before,
+.chk:checked + .vader-saber>.sword.blue::before,
+.chk:checked + .vader-saber>.sword.red::before,
+.chk:checked + .vader-saber>.sword.purple::before{
+	transform: rotate(0);
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
+.chk:checked + .vader-saber>.sword,
+.chk:checked + .vader-saber>.sword.blue,
+.chk:checked + .vader-saber>.sword.red,
+.chk:checked + .vader-saber>.sword.purple{
+	transform: rotate(0);
+	left: 50px;
+	-webkit-transition: all .2s ease-in-out;
+	-moz-transition: all .2s ease-in-out;
+	-o-transition: all .2s ease-in-out;
+	-ms-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+}
+
 
 @-webkit-keyframes flicker {
 
