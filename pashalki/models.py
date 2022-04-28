@@ -10,3 +10,6 @@ class Pictures(models.Model):
         
     def __str__(self):
         return f"{self.picture}"
+    
+
+

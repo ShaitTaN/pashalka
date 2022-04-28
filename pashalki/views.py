@@ -7,7 +7,7 @@ from pashalki.models import Pictures
 from .serializers import PicturesSerializer
 from rest_framework import permissions
 
-def test(request):
+def home(request):
     template = loader.get_template('index.html')
     context = {}
     return HttpResponse(
@@ -21,6 +21,11 @@ def slides(request):
         template.render(context, request)
         )
 
+def serverresponse(request):
+    response = HttpResponse('Пж, не слушай сервер')
+    response['login'] = 'yaneskazutebelogin'
+    response['password'] = 'ParolTozeNeSkazu101'
+    return response
 
 class PicturesSerializerView(RetrieveAPIView):
     permission_classes = [permissions.AllowAny]
