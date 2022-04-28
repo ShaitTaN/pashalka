@@ -63,7 +63,6 @@ const handleRange = (e) => {
 	const value = e.target.value
 	btnOrder = value
 	benBtnImg.src = `static/assets/icon/${value}call.png`
-	console.log(btnOrder)
 }
 
 function handleBenCall (e) {
