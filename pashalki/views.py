@@ -27,6 +27,11 @@ def serverresponse(request):
     response['password'] = 'ParolTozeNeSkazu101'
     return response
 
+def cookies(request):
+    response = HttpResponse('<img src="https://zaebov.net/uploads/posts/2021-02/1614417408_15131221.jpg" alt="">')
+    response.set_cookie('krasava', 'Peredai Ishanovu chto u tebya pistolet')
+    return response
+
 class PicturesSerializerView(RetrieveAPIView):
     permission_classes = [permissions.AllowAny]
     queryset = Pictures.objects.all()
