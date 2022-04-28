@@ -1,11 +1,16 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from django.template import loader
 from rest_framework.generics import RetrieveAPIView
+from django.shortcuts import redirect 
 
 from pashalki.models import Pictures
 from .serializers import PicturesSerializer
 from rest_framework import permissions
+
+def view_404(request, exception=None):
+    response = redirect('/') 
+    return response
 
 def home(request):
     template = loader.get_template('index.html')
@@ -30,6 +35,7 @@ def serverresponse(request):
 def cookies(request):
     response = HttpResponse('<img src="https://zaebov.net/uploads/posts/2021-02/1614417408_15131221.jpg" alt="">')
     response.set_cookie('krasava', 'Peredai Ishanovu chto u tebya pistolet')
+    response['finish'] = 'Ti proshel. Pozdravlaem!'
     return response
 
 class PicturesSerializerView(RetrieveAPIView):
