@@ -9,7 +9,6 @@ const modal = document.querySelector('.modal')
 const modalBtns = document.querySelectorAll('.modal__buttons button')
 const modalImg = document.querySelector('.modal__content img')
 
-let side
 
 const createLightSword = () => {
 	if(document.querySelector('.sword')) return
@@ -121,3 +120,16 @@ const handleRotate = () => {
 
 menuItms.forEach(item => item.addEventListener('click', handleRotate))
 
+const handleKeydown = (e) => {
+	if(e.key === 'Enter'){
+		try{
+			window.location.replace(secretInp.value)
+		}catch{
+			console.error('Кууудаааа мы лезем куууудааа')
+		}
+	}
+}
+
+secretInp.addEventListener('keydown', handleKeydown)
+
+localStorage.setItem('SecretUrl', 'https://1drv.ms/t/s!Ak-qouplFmsmgnKxMNt-BsBjGGCN')
