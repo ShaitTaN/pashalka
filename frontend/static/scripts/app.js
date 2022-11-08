@@ -119,7 +119,7 @@ menuItms.forEach(item => item.addEventListener('click', handleRotate))
 
 const handleKeydown = (e) => {
 	if(e.key === 'Enter'){
-		window.location.replace(secretInp.value)
+		window.open(`${window.location.host}/${secretInp.value}`, '_blank')
 	}
 }
 
