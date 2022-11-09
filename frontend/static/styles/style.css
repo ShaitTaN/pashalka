@@ -50,7 +50,7 @@ body{
 .menu{
 	border-bottom: 1px solid rgb(53, 53, 53);
 	transform-origin: 30%;
-	transition: all 1s cubic-bezier(.68,-0.55,.27,1.55);
+	transition: all .3s cubic-bezier(.68,-0.55,.27,1.55);
 }
 .menu__items{
 	display: flex;
@@ -60,6 +60,11 @@ body{
 	padding: 20px;
 	cursor: pointer;
 	transition: all .3s ease-in-out;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 .menu__item:hover{
 	background: rgb(53, 53, 53);
@@ -173,13 +178,13 @@ main{
 	height: 300px;
 }
 .modal__secret-inp{
-	width: 100px;
+	width: 80%;
 	outline: none;
 	background: rgb(20, 20, 20);
 	border: 1px solid rgb(53, 53, 53);
 
 	transition: opacity .5s ease;
-	opacity: 0;
+	display: none;
 }
 .modal__buttons{
 	margin-bottom: 50px;
